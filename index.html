@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인테라스 인테리어 공사 체크리스트 300</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Pretendard',sans-serif;font-size:14px;background:#f8f8f6;color:#1a1a1a}
+.wrap{max-width:720px;margin:0 auto;padding:2rem 1rem 4rem}
+.brand{font-size:12px;color:#888;margin-bottom:4px;letter-spacing:.05em;text-transform:uppercase}
+h1{font-size:22px;font-weight:600;margin-bottom:4px}
+.subtitle{font-size:13px;color:#666;margin-bottom:2rem}
+.info-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1.25rem;margin-bottom:1.5rem}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.info-grid.three{grid-template-columns:1fr 1fr 1fr}
+.field-label{font-size:12px;color:#666;margin-bottom:5px}
+.field-label span{color:#e24b4a}
+input,select{width:100%;padding:8px 10px;font-size:13px;border:1px solid #e0e0e0;border-radius:8px;background:#fff;color:#1a1a1a;outline:none}
+input:focus,select:focus{border-color:#1a1a1a}
+.progress-wrap{margin-bottom:1.25rem}
+.progress-top{display:flex;justify-content:space-between;margin-bottom:6px}
+.progress-label{font-size:12px;color:#666}
+.progress-count{font-size:12px;font-weight:600}
+.prog-track{height:6px;background:#ebebeb;border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:#1D9E75;border-radius:3px;transition:width .3s}
+.tab-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+.tab{padding:6px 14px;font-size:12px;border:1px solid #ddd;border-radius:20px;background:#fff;color:#666;cursor:pointer}
+.tab.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.checklist-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.cat-header{padding:10px 16px;background:#f8f8f6;border-bottom:1px solid #e8e8e8;font-size:12px;font-weight:600;color:#444;display:flex;justify-content:space-between}
+.check-item{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #f0f0f0;cursor:pointer;transition:background .1s}
+.check-item:last-child{border-bottom:none}
+.check-item:hover{background:#fafafa}
+.check-item.checked{background:#f0faf5}
+.check-box{width:18px;height:18px;border:1.5px solid #ccc;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff}
+.check-item.checked .check-box{background:#1D9E75;border-color:#1D9E75}
+.check-item.checked .check-box::after{content:'';display:block;width:5px;height:9px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translate(-1px,-1px)}
+.num-badge{font-size:11px;color:#aaa;min-width:28px;flex-shrink:0}
+.item-text{font-size:13px;line-height:1.5}
+.check-item.checked .item-text{color:#999;text-decoration:line-through}
+.submit-btn{width:100%;padding:14px;font-size:15px;font-weight:600;background:#1a1a1a;color:#fff;border:none;border-radius:12px;cursor:pointer;margin-top:.5rem}
+.submit-btn:hover{background:#333}
+.submit-btn:disabled{opacity:.4;cursor:not-allowed}
+.success-box{background:#f0faf5;border:1px solid #9FE1CB;border-radius:12px;padding:2rem;text-align:center;display:none;margin-top:1rem}
+.success-box .icon{font-size:36px;color:#1D9E75;margin-bottom:8px}
+.success-box p{font-size:15px;font-weight:600;color:#085041}
+.success-box small{font-size:13px;color:#666;margin-top:4px;display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="brand">Interace Interior</p>
+  <h1>인테리어 공사 체크리스트 300</h1>
+  <p class="subtitle">공사 전 꼭 확인해야 할 항목들을 함께 체크해 보세요</p>
+  <div class="info-card">
+    <div class="info-grid">
+      <div><p class="field-label">이름 <span>*</span></p><input type="text" id="f-name" placeholder="홍길동"></div>
+      <div><p class="field-label">연락처 <span>*</span></p><input type="tel" id="f-phone" placeholder="010-0000-0000"></div>
+    </div>
+    <div class="info-grid three">
+      <div><p class="field-label">지역</p>
+        <select id="f-region"><option value="">선택</option><option>서울 동작구</option><option>서울 기타</option><option>경기도</option><option>인천</option><option>기타 수도권</option></select>
+      </div>
+      <div><p class="field-label">평수</p>
+        <select id="f-size"><option value="">선택</option><option>20평 이하</option><option>21~30평</option><option>31~40평</option><option>41~50평</option><option>51평 이상</option></select>
+      </div>
+      <div><p class="field-label">공사 예정</p>
+        <select id="f-timing"><option value="">선택</option><option>1개월 이내</option><option>3개월 이내</option><option>6개월 이내</option><option>아직 미정</option></select>
+      </div>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-top"><span class="progress-label">전체 진행률</span><span class="progress-count" id="prog-txt">0 / 300</span></div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+  <div class="tab-bar" id="tab-bar"></div>
+  <div id="checklist-area"></div>
+  <button class="submit-btn" id="submit-btn" onclick="submitForm()">체크리스트 제출하기</button>
+  <div class="success-box" id="success-box">
+    <div class="icon">✓</div>
+    <p>제출 완료!</p>
+    <small>인테라스 인테리어팀이 곧 연락드릴게요 :)</small>
+  </div>
+</div>
+<script>
+const SHEET_URL="여기에_Apps_Script_웹앱_URL_입력";
+const CATEGORIES=[
+{name:"공통",items:["공사 계약서 날인 전 전체 항목 서면 확인 완료","현장 실측 완료 (평면도와 실제 수치 대조)","공사 일정표 수령 및 확인","부가세 포함 여부 확인","잔금 지급 조건 확인 (입주 후 10% 이상)","하자보수 기간 명시 여부 확인 (최소 1년)","자재 브랜드·모델명·규격 견적서 명시 여부","일체 등 모호한 표현 없음 확인","별도·추후 협의 문구 없음 확인","폐기물 처리 비용 포함 여부 확인","엘리베이터 보양 작업 비용 포함 여부","각 공정 업체 명단 수령 (목공·전기·타일 등)","공사 전 현장 상태 사진 공동 촬영 및 보관","기존 하자·손상 부위 공동 체크 후 서명","누수 흔적 유무 확인","결로·곰팡이 발생 부위 사전 확인","분전반(두꺼비집) 위치·상태 확인","단독 전기선 필요 여부 확인 (인덕션·오븐 등)","도어 종류 및 개폐 방향 사전 결정","각 공간 조명 메인·간접 분리 계획","전체 콘센트 위치·수량 계획 완료","각 공간 바닥재 종류·규격 최종 결정","도장(페인트) vs 벽지 전 공간 결정","철거 범위 명확히 결정 및 서면 확인","보양재 설치 범위 확인 (복도·엘리베이터 등)","몰딩 시공 범위 및 마감 방식 결정","실리콘 마감 색상 전 공간 결정","소음·분진 이웃 사전 고지 완료 여부","공사 보험 가입 여부 확인","천장 높이 전 공간 실측 완료","계약서 내 하자 책임 범위·처리 절차 명기 여부","공사 중 손해배상 책임 조항 확인","기존 가구·가전 보관 방법 사전 협의","공사 중 임시 거주 또는 이사 계획 수립","주차 및 자재 반입 경로 사전 확인","각 공간 천장 마감 소재 결정 (도장·합지·흡음재)"]},
+{name:"현관",items:["현관문 도어락 종류 및 교체 여부 결정","도어체크(도어클로저) 작동 상태 확인","도어 스토퍼 위치·설치 여부 결정","현관문 우풍 방지 실(패킹) 상태 확인","현관문 공사 중 스크래치 방지 보양 처리","비디오폰/인터폰 존치 또는 교체 여부 결정","비디오폰 배선 위치 확인 (철거 시 재시공)","우유통 존치 여부 결정","현관 바닥 타일 종류·규격 결정","현관 바닥 단차 확인 및 처리 방법 결정","걸레받이 소재·높이·색상 결정","신발장 크기·위치·종류 결정","현관 조명 위치·종류 결정","현관 콘센트 위치 결정 (충전기·청소기용)","현관 확장 여부 결정 (중문 설치 포함)","중문 설치 여부 및 방화 규정 확인","현관 거울·미러 설치 위치 결정","현관 수납 벤치 설치 여부 결정","현관 조명 스위치 위치 결정","현관 인조대리석·포세린타일 선택","현관 바닥 논슬립 처리 여부","현관 천장 몰딩 처리 방식 결정","현관~거실 단차 처리 방법 결정","현관 자동감응 조명 설치 여부","현관 도어 하단 바닥 긁힘 흔적 사전 확인","현관 포세린타일 줄눈 색상 결정","현관 신발장 내부 조명 설치 여부","현관 우산꽂이·훅 설치 위치 결정","현관 천장 다운라이트 위치·수량 결정","현관 바닥 하부 타일 접착 방식 확인 (전면 접착)"]},
+{name:"거실",items:["거실 바닥재 종류 결정 (마루·타일·대리석)","기존 바닥재 철거 vs 덧방 결정","거실 바닥 난방 상태 점검","거실 천장 높이 실측 및 몰딩 계획","발코니 확장 여부 결정","발코니 확장 시 행위허가 신고 여부 확인","창호(샤시) 종류·교체 여부 결정","창호 단열 등급 확인","단열재 시공 범위 결정 (발코니 확장 시)","에어컨 위치·종류 결정","에어컨 배관 경로 사전 계획","TV 위치 결정 및 벽 매립 배선 계획","TV 벽 브래킷 설치 시 보강재 시공 여부","소파 배치에 따른 콘센트 위치 계획","인터넷·TV 단자 위치 결정","거실 벽체 도장 vs 벽지 결정","거실 포인트 벽 위치·마감재 결정","걸레받이 시공 방식·높이·색상 결정","거실 창문 커튼박스 설치 여부","롤스크린·블라인드 설치 계획","거실 천장 간접조명 박스 설치 여부","LED 매입등 개수·위치 계획","거실 주조명·보조조명 스위치 분리 계획","화재감지기 위치 확인 및 복구 계획","스프링클러 위치 확인 (주상복합)","거실 유리문·중문 설치 여부","거실 수납장 설치 여부 및 위치","거실 문(여닫이·미닫이) 방향 결정","거실 내부 창 설치 여부 (주방 방향)","거실 바닥 온돌 배관 상태 확인","TV 미디어 월·아트 월 설치 여부","거실 커튼·블라인드 최종 색상·소재 결정","거실 바닥 난방 밸브 위치 확인","대형 가구(소파·장) 반입 경로 사전 확인","펜던트·샹들리에 설치 시 천장 하중 보강 여부"]},
+{name:"주방",items:["싱크대 레이아웃 결정 (ㄱ자·일자·ㄷ자)","싱크대 위치 변경 여부 (배수 구배 필수 확인)","싱크대 상판 소재 결정 (인조대리석·세라믹·스테인리스)","싱크볼 종류 결정 (매립형·언더마운트 등)","싱크볼 수밀 테스트 계획 (20분 이상 물 채우기)","배수구 위치·경로·구배 확인","냉장고 위치·크기 실측 및 공간 확인","냉장고 상부장 설치 여부 결정","인덕션 vs 가스레인지 결정","인덕션 단독 전기선 시공 (전용 차단기 설치)","전기오븐 단독 전기선 시공 여부","가스 배관 존치·철거·이전 여부 결정","후드 종류 결정 (매립형·슬림형·아일랜드형)","후드 자바라관 길이·방향·연결 상태 확인","주상복합 연동선(댐퍼) 연결 여부 확인","식기세척기 위치 결정 (싱크볼 오른쪽 권장)","식기세척기 배수구·온수분배기 위치 충돌 확인","온수분배기 위치 확인 및 이전 여부 결정","밥솥장 위치 결정 및 증기 배출 방향 확인","커피머신·소형 가전 콘센트 위치 결정","주방 콘센트 총 수량·높이 계획","냉온수 수전(수도꼭지) 종류·위치 결정","정수기 설치 위치 및 직수 배관 계획","주방 타일 종류·규격·색상 결정","기존 주방 타일 철거 vs 덧방 결정","조리대 상판~싱크볼 연결부 방수 실리콘 처리 확인","냉장고 전용 콘센트 접지 여부","주방 창문 방향과 후드 배기 간섭 여부 확인","타일 철거 시 석고면 손상 여부 사전 확인","주방 천장 소재 결정 (도장·합지·스타코)","주방 천장 간접조명·매입등 위치 계획","상부장 조명 설치 여부 결정","상부장 유리문 설치 여부 결정","하부장 소재·색상·마감 결정","주방 손잡이 종류 결정 (바형·버튼형·홈)","코너장 회전선반·매직코너 설치 여부","키큰장(팬트리) 설치 여부 및 위치","주방 걸레받이 시공 여부 및 종류","주방 창문 블라인드·롤스크린 설치 여부","주방 환기 창문 샤시 상태 확인","쓰레기통 위치 결정 (하부장 내 설치 여부)","조리대 하부 배관 보온재 시공 여부","주방 물·전기 차단 위치 확인","주방 방화셔터 위치 확인 (주상복합)","주방 조명 스위치 분리 계획 (메인·간접)","주방 벽면 전선 정리 계획","인덕션 냄비 2구 동시 작동 테스트 계획","후드 배기 작동·역류 확인 (휴지 흡착 테스트)","싱크볼 배수 정상 작동 확인","비디오폰 주방 설치 여부 확인","주방~거실 오픈형 계획 시 환기 설계","주방 콘센트 접지 여부 확인","인덕션 상판 고정 패킹 상태 확인","하부장 서랍 레일 브랜드 명시 (Blum 텐덤 권장)","상부장 하단 간접조명 라인 설치 여부","쿡탑 주변 벽 방열판·불연 소재 적용 여부","주방 창문 실리콘 마감 색상 결정","주방 수납공간 방충·방습 마감 처리 여부"]},
+{name:"침실",items:["침실 바닥재 종류·색상 결정","침실 난방(온돌) 상태 점검","침대 배치에 따른 콘센트 위치 계획","침실 조명 메인·간접 분리 계획","침실 스위치 위치 (침대 근처 배치)","에어컨 설치 위치·배관 경로 계획","드레스룸·붙박이장 종류·크기·위치 결정","옷장 내부 LED 조명 설치 여부","방문 종류 및 개폐 방향 결정","방문 잠금장치 종류 결정","침실 창문 샤시 상태 확인","블라인드·암막커튼 커튼박스 설치 여부","침실 단열 상태 확인 (외벽 접촉 면)","침실 결로·곰팡이 이력 확인 및 조치","침실 도배 소재·색상·패턴 결정","침실 콘센트 총 수량 결정 (TV·충전기 등)","인터넷 단자 위치 결정","침실 천장 마감 소재 결정","LED 매입등 개수·위치 계획","걸레받이 시공 방식·색상 결정","화재감지기 위치 복구 확인","아이방 안전 콘센트커버 설치 여부","공부방 책상 위치에 따른 조명 계획","방 방음 처리 필요 여부 결정","방 내부 수납 니치(매립 선반) 설치 여부","옷장·방문 간섭 여부 사전 확인","침실 환기 창문 방충망 상태 확인","방문 틈새 실링 처리 여부","전체 콘센트 접지 여부 확인","침실 스위치 수량 및 위치 최종 확인","침실 헤드월 마감 소재·색상 결정","침실 벽 수납 니치 내부 조명 설치 여부","침실 커튼 레일·박스 설치 방식 결정","침실 천장 간접조명 위치·폭 최종 결정","침대 하부 수납공간 확보 방식 결정"]},
+{name:"욕실",items:["욕실 바닥 타일 종류·규격·마감 결정","욕실 벽 타일 종류·규격·색상 결정","욕실 천장 소재 결정 (PVC·페인트·도장)","욕실 바닥-샤워부스 단차 설계 (1~2cm)","배수구 위치·경로 확인","방수 공사 시공 범위 결정","방수 양생 시간 확인 (최소 48시간)","수압 테스트 완료 여부 확인","세면대 종류 결정 (매립·반매립·스탠딩)","세면대 수전 종류·위치 결정","냉온수 위치 정확성 확인 (뜨거운물=왼쪽)","양변기 종류 결정 (벽걸이·바닥형)","비데 설치 계획 및 전용 콘센트 위치","욕조 설치 여부 및 종류 결정","샤워부스 종류 결정 (유리파티션·커튼)","유리 파티션 하단 고정 방향 확인 (아래로)","수건걸이 위치·수량 결정","휴지걸이 위치 결정","욕실 수납장 종류·위치 결정","욕실 환풍기 위치·종류 결정","환풍기 덕트 방향·길이 확인","욕실 조명 방습 등기구 여부 확인","욕실 콘센트 방수 커버 설치 여부","타일 줄눈 색상 결정","기존 타일 철거 vs 덧방 결정","샤워기 종류·높이 결정","욕실 매입 수납함(니치) 설치 여부","거울 크기·위치 결정","욕실 바닥 논슬립 처리 여부","욕실 실리콘 색상 결정","욕실 문 종류 결정 (여닫이·미닫이·폴딩)","욕실 문 개폐 방향 (외부 개방 권장)","하수구 냄새 방지 트랩 설치 확인","기존 배관 교체 여부 확인","욕실 타일 코너·가장자리 마감 확인","욕실 수건 온열 건조대 설치 여부","욕실 슬라이딩 샤워도어 브랜드·두께 결정","욕실 수납선반 소재 결정 (스텐레스 권장)","욕조 주변 방수 및 실리콘 마감 방식 확인","욕실 바닥 온돌(하이드로 난방) 연결 여부"]},
+{name:"베란다",items:["베란다 창호(샤시) 종류·교체 여부 결정","창호 단열 성능 등급 확인","베란다 바닥 마감재 결정","베란다 바닥 구배(물 흘림 방향) 확인","베란다 확장 여부 결정","확장 시 단열재 시공 범위 결정","확장 시 난방 배관 연결 여부","베란다 방충망 상태 확인","세탁기 위치 결정 (드럼·통돌이 크기 확인)","세탁기 전용 배수구 위치 확인","건조기 위치 결정 및 환기 배관 계획","세탁실 단열 공사 범위 결정","세탁실 방수 시공 여부","세탁실 곰팡이 방지 특수 페인트 사용","베란다 천장 빨래 건조대 위치 결정","세탁실 수납장 설치 여부","보조주방 활용 여부 결정","보조주방 콘센트 위치·수량 계획","보조주방 냉장고 위치 결정","베란다 문 하단 우풍 방지 실 상태 확인","베란다 미닫이문 종류·색상 결정","세탁실 수도꼭지 상태·위치 확인","세탁실 환기창 상태 확인","세탁실 콘센트 방수 여부 확인","베란다 이중창(단열창) 설치 여부 결정","베란다 외부 단열재 종류 결정 (비드법·압출법)","베란다 누수 방지 도막 방수 시공 여부","건조기 전용 콘센트 및 접지 확인","에어컨 실외기 위치 및 받침대 설치 확인","세탁기 방진 고무 발판 설치 여부","베란다 상부 수납장 설치 여부","베란다 바닥 타일·데크재 마감 방식 결정"]},
+{name:"하자",items:["현관문 우풍 실(패킹) 설치 완료 확인","현관문 공사 중 스크래치 여부 확인","전체 걸레받이 시공 완료 여부 확인","걸레받이 타카 자국 실리콘 마감 여부","도배지 들뜸·기포·이음새 불량 여부 확인","도배 본드 얼룩 제거 여부 (입주 청소 후)","벽면 도장 균일 여부 (뭉침·흘림 없음)","바닥 타일 균열·파손 여부 확인","타일 줄눈 마감 균일 여부 확인","바닥재 들뜸·삐걱거림 여부 확인","천장 마감 갈라짐·이음새 여부 확인","실리콘 마감 균일·변색 없음 확인","냉온수 수전 방향 정확성 확인","인덕션 2구 동시 작동 테스트 (냄비 올려서)","후드 배기 작동 확인 (휴지 흡착 테스트)","싱크볼 수밀 테스트 완료 (20분 이상)","욕실 단차 확인 (샤워부스 1~2cm 낮음)","욕실 유리 파티션 방향 확인 (아래로 고정)","전체 콘센트 작동 여부 확인","전체 조명 스위치 분리 작동 확인","화재감지기 전체 복구 여부 확인","방마다 난방 작동 여부 확인","도어체크·도어스토퍼 작동 확인","각 방문 여닫힘·잠금 정상 작동 확인","최종 현장 잔여물 처리 및 청결 상태 확인","전체 실리콘 색상 통일 여부 확인","도장 마감면 롤러 자국·얼룩 없음 확인","창호 개폐 시 이음새·소음 없음 확인","에어컨 배관 마감 몰딩 처리 여부 확인","욕실 수압 정상 여부 확인 (냉·온수 모두)","전체 걸레받이 모서리 마감 상태 확인","전체 바닥재 이음새 단차 여부 확인","입주 청소 전 업체 마감 재방문 일정 합의","하자 발생 시 연락처·담당자 정보 서면 수령"]}
+];
+let checked={},currentTab=0;
+function totalChecked(){return Object.values(checked).filter(Boolean).length}
+function updateProgress(){const t=totalChecked();document.getElementById('prog-txt').textContent=t+' / 300';document.getElementById('prog-fill').style.width=Math.round(t/300*100)+'%'}
+function renderTabs(){const bar=document.getElementById('tab-bar');bar.innerHTML='';CATEGORIES.forEach((cat,i)=>{const cnt=cat.items.filter((_,j)=>checked[i+'-'+j]).length;const btn=document.createElement('button');btn.className='tab'+(i===currentTab?' active':'');btn.textContent=cat.name+' '+cnt+'/'+cat.items.length;btn.onclick=()=>{currentTab=i;renderTabs();renderList()};bar.appendChild(btn)})}
+function renderList(){const area=document.getElementById('checklist-area');const cat=CATEGORIES[currentTab];let startNum=0;for(let i=0;i<currentTab;i++)startNum+=CATEGORIES[i].items.length;area.innerHTML='';const card=document.createElement('div');card.className='checklist-card';const hdr=document.createElement('div');hdr.className='cat-header';const done=cat.items.filter((_,j)=>checked[currentTab+'-'+j]).length;hdr.innerHTML='<span>'+cat.name+'</span><span>'+done+' / '+cat.items.length+' 완료</span>';card.appendChild(hdr);cat.items.forEach((item,j)=>{const key=currentTab+'-'+j;const isChecked=!!checked[key];const row=document.createElement('div');row.className='check-item'+(isChecked?' checked':'');row.innerHTML='<span class="num-badge">'+String(startNum+j+1).padStart(3,'0')+'</span><div class="check-box"></div><span class="item-text">'+item+'</span>';row.onclick=()=>{checked[key]=!checked[key];renderTabs();renderList();updateProgress()};card.appendChild(row)});area.appendChild(card)}
+function submitForm(){const name=document.getElementById('f-name').value.trim();const phone=document.getElementById('f-phone').value.trim();if(!name||!phone){alert('이름과 연락처는 필수입니다!');return}const checkedItems=[];CATEGORIES.forEach((cat,i)=>{cat.items.forEach((item,j)=>{if(checked[i+'-'+j])checkedItems.push('['+cat.name+'] '+item)})});const payload={timestamp:new Date().toLocaleString('ko-KR'),name,phone,region:document.getElementById('f-region').value,size:document.getElementById('f-size').value,timing:document.getElementById('f-timing').value,total_checked:totalChecked(),checked_items:checkedItems.join('\n')};const btn=document.getElementById('submit-btn');btn.textContent='제출 중...';btn.disabled=true;fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).finally(()=>{document.getElementById('success-box').style.display='block';btn.style.display='none'})}
+renderTabs();renderList();updateProgress();
+</script>
+</body>
+</html>

@@ -309,6 +309,33 @@ function toggle(btn){
   var item=btn.parentElement;
   item.classList.toggle('open');
 }
+  function tog(btn){
+  var on=btn.style.background==='rgb(44, 36, 22)';
+  btn.style.background=on?'#FAF8F5':'#2C2416';
+  btn.style.color=on?'#6B5E4E':'#FAF8F5';
+  btn.style.borderColor=on?'#D0C8BC':'#2C2416';
+}
+function submitConsult(){
+  var apt=document.getElementById('q1').value.trim();
+  if(!apt){alert('아파트명 및 평형대를 입력해 주세요!');return}
+  var SHEET_URL='https://script.google.com/macros/s/AKfycbzbzZ7cpfrg6dYyvCs4QIBQ_Z2W6wx4hLLqG4Q7Eo3UVbPXAvzM4MmtqDXA3yy7MiRHLg/exec';
+  var scope=[],budget=[],family=[],lifestyle=[];
+  document.querySelectorAll('button').forEach(function(b){
+    if(b.style.background==='rgb(44, 36, 22)') scope.push(b.textContent);
+  });
+  fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+    timestamp:new Date().toLocaleString('ko-KR'),
+    type:'사전상담',
+    apt:apt,
+    date_start:document.getElementById('q2s').value,
+    date_end:document.getElementById('q2e').value,
+    selections:scope.join(', '),
+    memo:document.getElementById('q7').value
+  })}).finally(function(){
+    document.getElementById('consult-success').style.display='block';
+    document.querySelector('[onclick="submitConsult()"]').style.display='none';
+  });
+}
 </script>
 </body>
 </html>
